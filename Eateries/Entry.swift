@@ -8,6 +8,7 @@ struct Entry: Codable, Identifiable {
     var location: String
     var notes: String
     var review: String
+    var image: String
 }
 
 

@@ -14,7 +14,7 @@ struct EntryApp: App {
     static var model: [Entry] = {
         guard let data  = try? Data(contentsOf: EntryApp.fileURL),
               let model = try? JSONDecoder().decode([Entry].self, from: data) else {
-            return [Entry(title: "Test1", location: "Test1", notes: "notes test1", review: "testtest"), Entry(title: "Test2", location: "Test1", notes: "notes test1", review: "testtest") ]
+            return [Entry(title: "Test1", location: "Test1", notes: "notes test1", review: "testtest", image: "New"), Entry(title: "Test2", location: "Test1", notes: "notes test1", review: "testtest", image: "New") ]
         }
         return model
     }()

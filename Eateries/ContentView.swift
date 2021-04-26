@@ -37,7 +37,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             MasterView(entries: $entries)
-                .navigationBarItems(leading: EditButton(), trailing: Button("+", action: { entries.append(Entry(title: "New", location: "New", notes: "New", review: "New"))}))
+                .navigationBarItems(leading: EditButton(), trailing: Button("+", action: { entries.append(Entry(title: "New", location: "New", notes: "New", review: "New", image: "New"))}))
         }
     }
 }
@@ -48,6 +48,7 @@ struct MasterView: View {
         List {
             ForEach(entries) {
                 DetailView(entry: $entries[identifiedBy: $0])
+
             }.onMove {
                 entries.move(fromOffsets: $0, toOffset: $1)
                 EntryApp.save()
@@ -62,11 +63,36 @@ struct MasterView: View {
 struct DetailView: View {
     @Binding var entry: Entry
     var body: some View {
-        TextField("Enter Entry name", text: $entry.title, onCommit:  {
-            EntryApp.save()
-        })
-    }
+                HStack{
+                    Image(uiImage: entry.image.load())
+                        .resizable()
+                        .frame (width:75, height:50)
+                        .scaledToFit()
+                    VStack(alignment: .leading){
+
+
+                        Text(entry.title)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 10)
+                            .font(.system(size: 20))
+
+
+                        Text(entry.location)
+                            .multilineTextAlignment(.leading)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 10)
+                            .font(.footnote)
+                            .lineSpacing(0.5)
+
+                    }
+                }
+            }
 }
+//        TextField("Enter Entry name", text: $entry.title, onCommit:  {
+//            EntryApp.save()
+//        })
+//    }
+//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
