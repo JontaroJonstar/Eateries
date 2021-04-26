@@ -17,6 +17,7 @@
 		7FEF4F9726375FD100889CF6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF4F9626375FD100889CF6 /* Entry.swift */; };
 		7FEF4F9C26375FF000889CF6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF4F9B26375FF000889CF6 /* DetailView.swift */; };
 		7FEF4FA12637600400889CF6 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF4FA02637600400889CF6 /* EditTextView.swift */; };
+		7FEF4FA62637634800889CF6 /* Binding+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF4FA52637634800889CF6 /* Binding+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7FEF4F9626375FD100889CF6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		7FEF4F9B26375FF000889CF6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7FEF4FA02637600400889CF6 /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
+		7FEF4FA52637634800889CF6 /* Binding+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				7FEF4F6326375F6300889CF6 /* EateriesApp.swift */,
+				7FEF4FA52637634800889CF6 /* Binding+Identifiable.swift */,
 				7FEF4F9126375FBC00889CF6 /* ViewModel.swift */,
 				7FEF4F9626375FD100889CF6 /* Entry.swift */,
 				7FEF4F6526375F6300889CF6 /* ContentView.swift */,
@@ -274,6 +277,7 @@
 				7FEF4F9726375FD100889CF6 /* Entry.swift in Sources */,
 				7FEF4F6626375F6300889CF6 /* ContentView.swift in Sources */,
 				7FEF4F9226375FBC00889CF6 /* ViewModel.swift in Sources */,
+				7FEF4FA62637634800889CF6 /* Binding+Identifiable.swift in Sources */,
 				7FEF4FA12637600400889CF6 /* EditTextView.swift in Sources */,
 				7FEF4F9C26375FF000889CF6 /* DetailView.swift in Sources */,
 				7FEF4F6426375F6300889CF6 /* EateriesApp.swift in Sources */,
