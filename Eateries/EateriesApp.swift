@@ -14,7 +14,8 @@ struct EntryApp: App {
     static var model: [Entry] = {
         guard let data  = try? Data(contentsOf: EntryApp.fileURL),
               let model = try? JSONDecoder().decode([Entry].self, from: data) else {
-            return [Entry(title: "Test1", location: "Test1", notes: "notes test1", review: "testtest", image: "New"), Entry(title: "Test2", location: "Test1", notes: "notes test1", review: "testtest", image: "New") ]
+            return [Entry(title: "the fishhouse", location: "Gold Coast", notes: "Long considered one of the best fine dining options on the Gold Coast", review: "Nice and fresh seafood. I prefer the entree than the mains. Good service. Will recommend to friends", image: "https://img.delicious.com.au/IAqs2s4F/del/2018/06/fish-house-81848-2.jpg"),
+                    Entry(title: "Tai Tai", location: "South Bank", notes: "This casual, chic al fresco restaurant brings authentic South East Asian cuisine to a street corner in South Bank", review: "Amazing food. Great atmosphere. Will definitely come back.", image: "https://www.mustdobrisbane.com/sites/default/files/styles/mdb_article_full/public/images/Tai-Tai-_DSC1444.jpg?itok=yKHh8bm9") ]
         }
         return model
     }()

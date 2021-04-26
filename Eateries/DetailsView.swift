@@ -99,26 +99,7 @@ struct DetailsView: View {
                                     .foregroundColor(.white)
                                     .font(.callout)
                                     .lineSpacing(0.5)
-                                
-                                //Food Recipe
-                                Text("INGREDIENTS")
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 10)
-                                    .frame(width: 700)
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .lineSpacing(0.5)
-                                Text("\(entry.review)")
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 10)
-                                    .frame(width: 700)
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .font(.callout)
-                                    .lineSpacing(0.5)
+
                             }
                         }
                         
@@ -186,33 +167,14 @@ struct DetailsView: View {
                                     .foregroundColor(.white)
                                     .font(.footnote)
                                     .lineSpacing(0.5)
-                                
-                                //Food Recipe
-                                Text("INGREDIENTS")
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 10)
-                                    .frame(width: 310)
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .lineSpacing(0.5)
-                                Text("\(entry.review)")
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 10)
-                                    .frame(width: 310)
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .font(.footnote)
-                                    .lineSpacing(0.5)
+
                                 
                             }
                             .navigationBarTitleDisplayMode(.inline)
                                                         
-//                            .navigationBarItems(trailing:
-//                                                    NavigationLink(destination: EditTextView(entry: entry)) {
-//                                                Text("Edit Entry")})
+                            .navigationBarItems(trailing:
+                                                    NavigationLink(destination: EditTextView(entry: $entry)) {
+                                                Text("Edit Entry")})
                         
                         }
                     }
