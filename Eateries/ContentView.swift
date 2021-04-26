@@ -63,6 +63,8 @@ struct MasterView: View {
 struct DetailView: View {
     @Binding var entry: Entry
     var body: some View {
+        NavigationLink(
+            destination: DetailsView(entry: $entry), label: {
                 HStack{
                     Image(uiImage: entry.image.load())
                         .resizable()
@@ -86,7 +88,8 @@ struct DetailView: View {
 
                     }
                 }
-            }
+            })
+        }
 }
 //        TextField("Enter Entry name", text: $entry.title, onCommit:  {
 //            EntryApp.save()

@@ -1,6 +1,26 @@
 import Foundation
 import SwiftUI
 
+class EntryC: Identifiable, ObservableObject {
+    var id = UUID()
+    var title: String
+    var location: String
+    var notes: String
+    var review: String
+    var image: String
+    
+    
+    init(title: String, location: String, notes: String, review: String, recipe: String, image: String){
+        self.id = UUID()
+        self.title = title
+        self.location = location
+        self.notes = notes
+        self.review = review
+        self.image = image
+        
+    }
+}
+
 
 struct Entry: Codable, Identifiable {
     var id = UUID()
