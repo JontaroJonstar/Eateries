@@ -32,19 +32,19 @@ struct EditTextView: View {
                         TextEditor(text: $entry.title)
                             .border(Color.black, width: 1)}
                             
-                        VStack{Text("Description")
+                        VStack{Text("Location")
                             .font(.footnote)
                         TextEditor(text: $entry.location)
                             .border(Color.black, width: 1)}
-                        VStack{Text("Story")
+                        VStack{Text("Notes")
                             .font(.footnote)
                             TextEditor(text: $entry.notes)
                                 .border(Color.black, width: 1)}
-                        VStack{Text("Recipe")
+                        VStack{Text("Author")
                             .font(.footnote)
                         TextEditor(text: $entry.review)
                             .border(Color.black, width: 1)}
-                        VStack{Text("Ingredients")
+                        VStack{Text("Review")
                             .font(.footnote)
                         TextEditor(text: $entry.review)
                             .border(Color.black, width: 1)}
