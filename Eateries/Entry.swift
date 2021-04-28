@@ -7,15 +7,17 @@ class EntryC: Identifiable, ObservableObject {
     var location: String
     var notes: String
     @Published var review: Array <String>
+    @Published var author: Array <String>
     var image: String
     
     
-    init(title: String, location: String, notes: String, review: Array <String>, recipe: String, image: String){
+    init(title: String, location: String, notes: String, review: Array <String>, author: Array <String>, recipe: String, image: String){
         self.id = UUID()
         self.title = title
         self.location = location
         self.notes = notes
         self.review = review
+        self.author = author
         self.image = image
         
     }
@@ -28,6 +30,7 @@ struct Entry: Codable, Identifiable {
     var location: String
     var notes: String
     var review: Array <String>
+    var author: Array <String>
     var image: String
 }
 

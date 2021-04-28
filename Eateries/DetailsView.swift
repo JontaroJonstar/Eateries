@@ -151,7 +151,7 @@ struct DetailsView: View {
                                     .lineSpacing(0.5)
                                 
                                 //Food Recipe
-                                Button("ADD REVIEW +", action: {entry.review.append(("New Review"))})
+                                Button("ADD REVIEW +", action: {entry.review.append(("New Review")); entry.author.append(("New Author"))})
 //                                push_group_array.append(push_group_row(id: 1, code: newCode, title: newTitle))
                                 Text("REVIEW")
                                     .multilineTextAlignment(.leading)
@@ -163,19 +163,43 @@ struct DetailsView: View {
                                     .font(.title)
                                     .lineSpacing(0.5)
                                 
-                                ForEach(entry.review, id: \.self) { review in
-                                    Text(review.description.capitalized)
-                                
-                                    
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 10)
-                                    .frame(width: 310)
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .font(.footnote)
-                                    .lineSpacing(0.5)
+                                ForEach(entry.review.indices, id: \.self) { i in
+                                    Text(entry.author[i] + ": " + entry.review[i])
+                                        .multilineTextAlignment(.leading)
+                                        .padding(.horizontal, 10)
+                                        .padding(.vertical, 10)
+                                        .frame(width: 310)
+                                        .background(Color.red)
+                                        .foregroundColor(.white)
+                                        .font(.body)
+                                        .lineSpacing(0.5)
+                                        
                                 }
+                                
+                                
+                                
+//                                ForEach(entry.review, id: \.self) { review in
+//                                    Text(review.description.capitalized)
+//                                    .multilineTextAlignment(.leading)
+//                                    .padding(.horizontal, 10)
+//                                    .padding(.vertical, 10)
+//                                    .frame(width: 310)
+//                                    .background(Color.red)
+//                                    .foregroundColor(.white)
+//                                    .font(.footnote)
+//                                    .lineSpacing(0.5)
+//                                    ForEach(entry.author, id: \.self) { review in
+//                                        Text(review.description.capitalized)
+//                                        .multilineTextAlignment(.leading)
+//                                        .padding(.horizontal, 10)
+//                                        .padding(.vertical, 10)
+//                                        .frame(width: 310)
+//                                        .background(Color.red)
+//                                        .foregroundColor(.white)
+//                                        .font(.footnote)
+//                                        .lineSpacing(0.5)
+//                                    }
+//                                }
                                 
     
                                     
