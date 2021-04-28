@@ -1,9 +1,3 @@
-//
-//  Binding+Identifiable.swift
-//  JSONSerialisation
-//
-//  Created by Lecturer on 26/4/21.
-//
 import SwiftUI
 
 extension Binding where Value: MutableCollection, Value.Element: Identifiable {
