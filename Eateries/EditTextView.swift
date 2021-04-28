@@ -43,19 +43,18 @@ struct EditTextView: View {
                         VStack{Text("Author")
                             .font(.footnote)
                         
-                        ForEach(entry.review, id: \.self) { review in
-                            Text(review.description.capitalized)
-                            
-                        TextEditor(text: $entry.review[0])
-                            .border(Color.black, width: 1)}
-                        VStack{Text("Review")
-                            .font(.footnote)
-                        TextEditor(text: $entry.review[1])
-                            .border(Color.black, width: 1)}
-                        TextEditor(text: $entry.review[2])
-                            .border(Color.black, width: 1)}
-                        VStack{Text("ImageURL")
-                            .font(.footnote)
+                        ForEach(entry.review.indices, id: \.self) { i in
+                            TextEditor(text: $entry.review[i])
+                        }
+//                            .border(Color.black, width: 1)}
+//                        VStack{Text("Review")
+//                            .font(.footnote)
+//                        TextEditor(text: $entry.review[1])
+//                            .border(Color.black, width: 1)}
+//                        TextEditor(text: $entry.review[2])
+//                            .border(Color.black, width: 1)}
+//                        VStack{Text("ImageURL")
+//                            .font(.footnote)
                         TextEditor(text: $entry.image)
                             .border(Color.black, width: 1)}
                     }
