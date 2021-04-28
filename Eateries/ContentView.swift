@@ -37,7 +37,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             MasterView(entries: $entries)
-                .navigationBarItems(leading: EditButton(), trailing: Button("+", action: { entries.append(Entry(title: "New", location: "New", notes: "New", review: "New", image: "New"))}))
+                .navigationBarItems(leading: EditButton(), trailing: Button("+", action: { entries.append(Entry(title: "New", location: "New", notes: "New", review: ["New"], image: "New"))}))
         }
     }
 }

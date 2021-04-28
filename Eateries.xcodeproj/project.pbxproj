@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0E3C932639302D00CE0F55 /* ReviewEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3C922639302D00CE0F55 /* ReviewEdit.swift */; };
 		7FEF4F6426375F6300889CF6 /* EateriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF4F6326375F6300889CF6 /* EateriesApp.swift */; };
 		7FEF4F6626375F6300889CF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF4F6526375F6300889CF6 /* ContentView.swift */; };
 		7FEF4F6826375F6400889CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FEF4F6726375F6400889CF6 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F0E3C922639302D00CE0F55 /* ReviewEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEdit.swift; sourceTree = "<group>"; };
 		7FEF4F6026375F6300889CF6 /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEF4F6326375F6300889CF6 /* EateriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesApp.swift; sourceTree = "<group>"; };
 		7FEF4F6526375F6300889CF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				7FEF4F6526375F6300889CF6 /* ContentView.swift */,
 				7FEF4F9B26375FF000889CF6 /* DetailsView.swift */,
 				7FEF4FA02637600400889CF6 /* EditTextView.swift */,
+				7F0E3C922639302D00CE0F55 /* ReviewEdit.swift */,
 				7FEF4F6726375F6400889CF6 /* Assets.xcassets */,
 				7FEF4F6C26375F6400889CF6 /* Info.plist */,
 				7FEF4F6926375F6400889CF6 /* Preview Content */,
@@ -277,6 +280,7 @@
 				7FEF4F9726375FD100889CF6 /* Entry.swift in Sources */,
 				7FEF4F6626375F6300889CF6 /* ContentView.swift in Sources */,
 				7FEF4F9226375FBC00889CF6 /* ViewModel.swift in Sources */,
+				7F0E3C932639302D00CE0F55 /* ReviewEdit.swift in Sources */,
 				7FEF4FA62637634800889CF6 /* Binding+Identifiable.swift in Sources */,
 				7FEF4FA12637600400889CF6 /* EditTextView.swift in Sources */,
 				7FEF4F9C26375FF000889CF6 /* DetailsView.swift in Sources */,

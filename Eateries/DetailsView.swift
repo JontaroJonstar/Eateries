@@ -11,6 +11,7 @@ import SwiftUI
 
 struct DetailsView: View {
     
+    
     //Property wrapper to allow for per screen size alterations
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.editMode) var editMode
@@ -81,6 +82,7 @@ struct DetailsView: View {
                                     .lineSpacing(0.5)
                                 
                                 //Food Recipe
+                                Button("ADD REVIEW +", action: {entry.review.append("New")})
                                 Text("REVIEW")
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 10)
@@ -90,15 +92,15 @@ struct DetailsView: View {
                                     .foregroundColor(.white)
                                     .font(.title)
                                     .lineSpacing(0.5)
-                                Text("\(entry.review)")
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 10)
-                                    .frame(width: 700)
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .font(.callout)
-                                    .lineSpacing(0.5)
+//                                Text(entry.review)
+//                                    .multilineTextAlignment(.leading)
+//                                    .padding(.horizontal, 10)
+//                                    .padding(.vertical, 10)
+//                                    .frame(width: 700)
+//                                    .background(Color.red)
+//                                    .foregroundColor(.white)
+//                                    .font(.callout)
+//                                    .lineSpacing(0.5)
 
                             }
                         }
@@ -149,6 +151,8 @@ struct DetailsView: View {
                                     .lineSpacing(0.5)
                                 
                                 //Food Recipe
+                                Button("ADD REVIEW +", action: {entry.review.append(("New Review"))})
+//                                push_group_array.append(push_group_row(id: 1, code: newCode, title: newTitle))
                                 Text("REVIEW")
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 10)
@@ -158,7 +162,11 @@ struct DetailsView: View {
                                     .foregroundColor(.white)
                                     .font(.title)
                                     .lineSpacing(0.5)
-                                Text("\(entry.review)")
+                                
+                                ForEach(entry.review, id: \.self) { review in
+                                    Text(review.description.capitalized)
+                                
+                                    
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 10)
                                     .padding(.vertical, 10)
@@ -167,6 +175,13 @@ struct DetailsView: View {
                                     .foregroundColor(.white)
                                     .font(.footnote)
                                     .lineSpacing(0.5)
+                                }
+                                
+    
+                                    
+
+                                
+                                
 
                                 
                             }
