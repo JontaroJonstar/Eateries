@@ -10,6 +10,7 @@ import SwiftUI
 
 extension String {
     func load() -> UIImage {
+        // function that allows for URL to image conversion
         do {
             // convert string to URL
             guard let url = URL(string: self)
@@ -46,13 +47,16 @@ struct MasterView: View {
     @Binding var entries: [Entry]
     var body: some View {
         List {
+            // looping through Entry objects
             ForEach(entries) {
                 DetailView(entry: $entries[identifiedBy: $0])
 
             }.onMove {
+                //onMove function, which allows moving of entries in EditMode
                 entries.move(fromOffsets: $0, toOffset: $1)
                 EntryApp.save()
             }.onDelete {
+                //onDelete function, which allows for entries to be deleted in EditMode
                 entries.remove(atOffsets: $0)
                 EntryApp.save()
             }
@@ -67,6 +71,7 @@ struct DetailView: View {
             destination: DetailsView(entry: $entry), label: {
                 HStack{
                     Image(uiImage: entry.image.load())
+                        // Image paramters
                         .resizable()
                         .frame (width:75, height:50)
                         .scaledToFit()
@@ -74,12 +79,14 @@ struct DetailView: View {
 
 
                         Text(entry.title)
+                            // Title parameters
                             .padding(.horizontal, 10)
                             .padding(.vertical, 10)
                             .font(.system(size: 20))
 
 
                         Text(entry.location)
+                            // Location paramters
                             .multilineTextAlignment(.leading)
                             .padding(.horizontal, 10)
                             .padding(.vertical, 10)
@@ -91,11 +98,7 @@ struct DetailView: View {
             })
         }
 }
-//        TextField("Enter Entry name", text: $entry.title, onCommit:  {
-//            EntryApp.save()
-//        })
-//    }
-//}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -106,84 +109,3 @@ struct ContentView_Previews: PreviewProvider {
         }))
     }
 }
-
-
-
-//struct ContentView: View {
-//    // instating all Entries from ListView
-//    @ObservedObject  var entries: ViewModel
-//    var body: some View {
-//        NavigationView {
-//            MasterView(entries: entries)
-//                .navigationBarTitle(Text("Favorite Foods"))
-//                .navigationBarItems(leading:
-//                    EditButton(), trailing:
-//                    Button(action: {
-//                    withAnimation {
-//                        entries.addElement()
-//                    }
-//                }) {
-//                        Image(systemName: "plus")
-//                })
-//        }
-//    }
-//}
-//
-//
-//struct MasterView: View {
-//    @Environment(\.editMode) var editMode
-//    @ObservedObject var entries: ViewModel
-//    var body: some View {
-//            List {
-//                ForEach(entries.model, id: \.description) { entry in
-//                    NavigationLink(
-//                        destination: DetailView(entry: entry), label: {
-//                        HStack{
-//                            Image(uiImage: entry.image.load())
-//                                .resizable()
-//                                .frame (width:75, height:50)
-//                                .scaledToFit()
-//                            VStack(alignment: .leading){
-//
-//
-//                                Text(entry.title)
-//                                    .padding(.horizontal, 10)
-//                                    .padding(.vertical, 10)
-//                                    .font(.system(size: 20))
-//
-//
-//                                Text(entry.description)
-//                                    .multilineTextAlignment(.leading)
-//                                    .padding(.horizontal, 10)
-//                                    .padding(.vertical, 10)
-//                                    .font(.footnote)
-//                                    .lineSpacing(0.5)
-//
-//                            }
-//                        }
-//                    })
-//                }.onMove(perform: move)
-//                .onDelete {
-//                    entries.remove(at: $0)
-//                }
-//
-//
-//        }
-//
-//
-//    }
-//    func move(from source: IndexSet,to destination: Int) {
-//        entries.model.move(fromOffsets: source, toOffset: destination)
-//    }
-//
-//}
-//
-//
-//
-//    struct ContentView_Previews: PreviewProvider {
-//        static var previews: some View {
-//            ContentView(entries:ViewModel())
-//        }
-//    }
-//
-//

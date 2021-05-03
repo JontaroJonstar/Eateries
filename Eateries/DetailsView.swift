@@ -27,6 +27,7 @@ struct DetailsView: View {
             ZStack {    //Background elements
                         Color.black
                 Image(uiImage: entry.image.load())
+                    // BGround Image parameters
                     .resizable()
                     .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                  
@@ -34,14 +35,17 @@ struct DetailsView: View {
                     .opacity(0.3)
                             
                             .ignoresSafeArea()
-                        // if statement covering regular size screen formating
-
+                       
+            
+                        
                     if sizeClass == .regular {
+                        // if statement covering regular size screen formating
 
                         VStack{  //Vertical Ordering and elements
                             
                             //Food Image
                             Image(uiImage: "\(entry.image)".load())
+                                // Image Parameters
                                 .resizable()
                                 .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                                 .frame(width: 400, height: 300, alignment: .topLeading)
@@ -50,8 +54,9 @@ struct DetailsView: View {
                                 .padding()
                             
                             ScrollView {
-                                // Food Title
+                                // Rest Title
                                 Text("\(entry.title)")
+                                    // Title Parameters
                                     .font(.custom("Geneva", size: 35))
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 50)
@@ -61,8 +66,9 @@ struct DetailsView: View {
 
                                     .lineSpacing(0.5)
                                 
-                                //Food Description
+                                //Rest Location
                                 Text("\(entry.location)").italic()
+                                    // Location Parameters
                                     .padding(.horizontal, 5)
                                     .frame(width: 700)
                                     .background(Color.red)
@@ -70,8 +76,9 @@ struct DetailsView: View {
                                     .font(.headline)
                                     .lineSpacing(0.5)
                                 
-                                //Food Story
+                                //Rest Notes
                                 Text("\(entry.notes)")
+                                    // Notes Paramters
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 10)
                                     .padding(.vertical, 10)
@@ -81,8 +88,9 @@ struct DetailsView: View {
                                     .font(.body)
                                     .lineSpacing(0.5)
                                 
-                                //Food Recipe
-                                Button("ADD REVIEW +", action: {entry.review.append("New")})
+                                
+                                Button("ADD REVIEW +", action: {entry.review.append(("New Review")); entry.author.append(("New Author"))})
+                                    // Button that adds a new author and review to the entry
                                 Text("REVIEW")
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 10)
@@ -92,15 +100,6 @@ struct DetailsView: View {
                                     .foregroundColor(.white)
                                     .font(.title)
                                     .lineSpacing(0.5)
-//                                Text(entry.review)
-//                                    .multilineTextAlignment(.leading)
-//                                    .padding(.horizontal, 10)
-//                                    .padding(.vertical, 10)
-//                                    .frame(width: 700)
-//                                    .background(Color.red)
-//                                    .foregroundColor(.white)
-//                                    .font(.callout)
-//                                    .lineSpacing(0.5)
 
                             }
                         }
@@ -110,7 +109,7 @@ struct DetailsView: View {
                     }else{
                         
                         VStack{ //Vertical Ordering and elements
-                            //Food Image
+                            //Rest Image
                             Image(uiImage: "\(entry.image)".load())
                                 .resizable()
                                 .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
@@ -119,7 +118,7 @@ struct DetailsView: View {
                                 .scaledToFit()
                             
                             ScrollView {
-                                // Food Title
+                                //Rest Title
                                 Text("\(entry.title)")
                                     .font(.custom("Geneva", size: 30))
                                     
@@ -130,7 +129,7 @@ struct DetailsView: View {
 
                                     .lineSpacing(0.5)
                                 
-                                //Food Description
+                                //Rest Location
                                 Text("\(entry.location)").italic()
                                     .padding(.horizontal, 5)
                                     .frame(width: 310)
@@ -139,7 +138,7 @@ struct DetailsView: View {
                                     .font(.headline)
                                     .lineSpacing(0.5)
                                 
-                                //Food Story
+                                //Rest Notes
                                 Text("\(entry.notes)")
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 10)
@@ -150,9 +149,8 @@ struct DetailsView: View {
                                     .font(.body)
                                     .lineSpacing(0.5)
                                 
-                                //Food Recipe
                                 Button("ADD REVIEW +", action: {entry.review.append(("New Review")); entry.author.append(("New Author"))})
-//                                push_group_array.append(push_group_row(id: 1, code: newCode, title: newTitle))
+                                // Button that adds a new author and review to the entry
                                 Text("REVIEW")
                                     .multilineTextAlignment(.leading)
                                     .padding(.horizontal, 10)
@@ -175,37 +173,6 @@ struct DetailsView: View {
                                         .lineSpacing(0.5)
                                         
                                 }
-                                
-                                
-                                
-//                                ForEach(entry.review, id: \.self) { review in
-//                                    Text(review.description.capitalized)
-//                                    .multilineTextAlignment(.leading)
-//                                    .padding(.horizontal, 10)
-//                                    .padding(.vertical, 10)
-//                                    .frame(width: 310)
-//                                    .background(Color.red)
-//                                    .foregroundColor(.white)
-//                                    .font(.footnote)
-//                                    .lineSpacing(0.5)
-//                                    ForEach(entry.author, id: \.self) { review in
-//                                        Text(review.description.capitalized)
-//                                        .multilineTextAlignment(.leading)
-//                                        .padding(.horizontal, 10)
-//                                        .padding(.vertical, 10)
-//                                        .frame(width: 310)
-//                                        .background(Color.red)
-//                                        .foregroundColor(.white)
-//                                        .font(.footnote)
-//                                        .lineSpacing(0.5)
-//                                    }
-//                                }
-                                
-    
-                                    
-
-                                
-                                
 
                                 
                             }
@@ -214,6 +181,7 @@ struct DetailsView: View {
                             .navigationBarItems(trailing:
                                                     NavigationLink(destination: EditTextView(entry: $entry)) {
                                                 Text("Edit Entry")})
+                            // Edit button which moves to the EditTextView View
                         
                         }
                     }
